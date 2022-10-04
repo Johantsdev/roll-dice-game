@@ -1,0 +1,36 @@
+
+.player1 {
+  grid-area: player1;
+}
+
+.player2 {
+  grid-area: player2;
+}
+
+.player1, .player2 {
+  margin:100px auto;
+
+  & h2 {
+    font-size: 7rem;
+    font-weight: 300;
+    margin-bottom: 150px;
+  }
+
+  & .globalScore {
+    font-size: 15rem;
+    font-weight: 100;
+    margin-bottom: 200px;
+  }
+
+  & .roundScore {
+    @include flexDisplay(space-around,center,column);
+    width: 200px;
+    height: 150px;
+    background-color: $orange;
+    font-size: 2rem;
+    & .number {
+      font-size: 5rem;
+      color: #FFF;
+    }
+  }
+}

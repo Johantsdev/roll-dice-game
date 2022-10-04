@@ -1,0 +1,27 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  padding: 10px clamp(10px, 2vw ,20px);
+  font-size: 3.1rem;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr 2fr;
+  grid-template-areas: 
+    "player1 playground player2";
+  min-width: 80vw;
+  margin: auto;
+  padding: 50px 10% 100px;
+  background-color: rgba(0, 0, 0, 0.149);
+}
+
+button:hover {
+  cursor: pointer;
+}

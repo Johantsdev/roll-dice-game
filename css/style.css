@@ -1,0 +1,186 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  padding: 10px clamp(10px, 2vw, 20px);
+  font-size: 3.1rem;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1.3fr 2fr;
+      grid-template-columns: 2fr 1.3fr 2fr;
+      grid-template-areas: "player1 playground player2";
+  min-width: 80vw;
+  margin: auto;
+  padding: 50px 10% 100px;
+  background-color: rgba(0, 0, 0, 0.149);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.player1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: player1;
+}
+
+.player2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: player2;
+}
+
+.player1, .player2 {
+  margin: 100px auto;
+}
+
+.player1 h2, .player2 h2 {
+  font-size: 7rem;
+  font-weight: 300;
+  margin-bottom: 150px;
+}
+
+.player1 .globalScore, .player2 .globalScore {
+  font-size: 15rem;
+  font-weight: 100;
+  margin-bottom: 200px;
+}
+
+.player1 .roundScore, .player2 .roundScore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 200px;
+  height: 150px;
+  background-color: #ea412b;
+  font-size: 2rem;
+}
+
+.player1 .roundScore .number, .player2 .roundScore .number {
+  font-size: 5rem;
+  color: #FFF;
+}
+
+.playground {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: playground;
+}
+
+.newGame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 200px;
+}
+
+.newGame img {
+  margin-right: 20px;
+}
+
+.dice {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 200px;
+  padding: 20px;
+  background-color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  gap: 20px 40px;
+}
+
+.dice div {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #ea412b;
+}
+
+.diceCommands {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.diceCommands button:first-child {
+  margin-bottom: 70px;
+}
+
+.diceCommands button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.diceCommands button img {
+  margin-right: 20px;
+}
+/*# sourceMappingURL=style.css.map */
