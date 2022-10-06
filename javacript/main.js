@@ -1,4 +1,6 @@
+//Import functions
 import {rollDice} from "./function/rollDice.js";
+
 
 //DOM elements
 const global1 = document.getElementById("global--0");
@@ -20,26 +22,17 @@ const player2Dot = document.querySelector(".player2 h2 span");
 const player1Zone = document.querySelector(".player1");
 const player2Zone = document.querySelector(".player2");
 
-//Function
-
-function switchPlayer() {
-  current = 0;
-  document.getElementById(`current--${activePlayer}`).textContent  = current;
-  activePlayer = activePlayer === 0 ? 1 : 0;
-  player1Zone.classList.toggle("player1-active")
-  player2Zone.classList.toggle("player2-active")
-}
-
 
 //Initialization
-let scores = [0, 0];
-let current = 0;
-let activePlayer = 0;
+let scores;
+let current;
+let activePlayer;
+initialize();
 
-// implement btnRoll functionality
+//Implement btnRoll functionality
 btnRoll.addEventListener("click", () => {
 
-  //1. generate a random number [1 to 6] and display the dice
+  //1. generate a number between [ 1 and 6 ] and display the dice
   let diceNumber = rollDice();
   dice.style.display = "flex";
 
@@ -48,20 +41,22 @@ btnRoll.addEventListener("click", () => {
     current += diceNumber;
     document.getElementById(`current--${activePlayer}`).textContent  = current;
   }
+
   //3. change active player and set current to 0 if diceNumber is equal 1
   else {
     switchPlayer();
   }
 })
 
-// implement btnHold functionality
+//Implement btnHold functionality
 btnHold.addEventListener("click", () => {
+
   //1. add current to global score
   scores[activePlayer] += current;
   document.getElementById(`global--${activePlayer}`).textContent  = scores[activePlayer];
 
-  //2. check if the player has reached the maximum
-  if (scores[activePlayer] >= 10) {
+  //2. check if the player HAS reached the maximum
+  if (scores[activePlayer] >= 100) {
     activePlayer === 0 ? player1Zone.classList.add("winner-player") : player1Zone.classList.add("looser-player")
     activePlayer === 1 ? player2Zone.classList.add("winner-player") : player2Zone.classList.add("looser-player")
     
@@ -69,17 +64,19 @@ btnHold.addEventListener("click", () => {
     btnRoll.style.display = "none";
   } 
   
+  //3. check if the player HAS NOT reached the maximum
   else {
     switchPlayer();
     diceDots.forEach(dot => dot.style.backgroundColor = "#FFF");
   }
 })
 
+//Implement btnNew functionality
+btnNew.addEventListener("click", initialize);
 
-// implement btnNew functionality
 
-btnNew.addEventListener("click", () => {
-
+//Functions
+function initialize() {
   scores = [0, 0];
   current = 0;
   activePlayer = 0;
@@ -99,5 +96,13 @@ btnNew.addEventListener("click", () => {
 
   btnHold.style.display = "flex";
   btnRoll.style.display = "flex";
-})
+  dice.style.display = "none";
+}
 
+function switchPlayer() {
+  current = 0;
+  document.getElementById(`current--${activePlayer}`).textContent  = current;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player1Zone.classList.toggle("player1-active");
+  player2Zone.classList.toggle("player2-active");
+}

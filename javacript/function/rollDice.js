@@ -1,7 +1,11 @@
 function rollDice() {
-  let diceNumber = Math.trunc(Math.random() * 6) + 1;
-  const diceDots = document.querySelectorAll(".dice div");
 
+  //1. generate a number between [ 1 and 6 ]
+  let diceNumber = Math.trunc(Math.random() * 6) + 1;
+
+  //2. display the dice
+  const diceDots = document.querySelectorAll(".dice div");
+  
   switch (diceNumber) {
     case 1:
       diceDots[0].style.backgroundColor = "#FFF";
