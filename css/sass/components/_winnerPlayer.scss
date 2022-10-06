@@ -1,0 +1,17 @@
+.winner-player {
+  background-color: rgba(0, 255, 0, 0.541);
+/* 
+  h2::before {
+    content : "WINNER!";
+    position: absolute;
+    transform: rotate(-15deg) ;
+    font-size: 4rem;
+  } */
+
+}
+
+.looser-player {
+  background-color: rgba(255, 0, 0, 0.576);
+
+
+}

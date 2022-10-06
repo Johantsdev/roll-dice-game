@@ -1,0 +1,24 @@
+.btn-new-game, .btn-roll,.btn-hold {
+  @include flexDisplay();
+  position: absolute;
+  right: calc(50% - 125px);
+  width: 250px;
+  font-size: 3rem;
+  img {
+    margin-right: 20px;
+  }
+}
+
+.btn-new-game {
+  top: 5%;
+}
+
+.btn-roll {
+  top: 70%;
+}
+
+.btn-hold {
+  top: 80%;
+}
+
+

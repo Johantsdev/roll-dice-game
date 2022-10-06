@@ -14,51 +14,48 @@
   <title>Roll the dice</title>
 </head>
 <body>
-  <div class="container">
-
-    <div class="player1">
-      <h2>PLAYER 1</h2>
-
-      <div class="globalScore">43</div>
-
-      <div class="roundScore">
-        <p>CURRENT</p>
-        <div class="number">11</div>
-      </div>
-    </div>
-
-    <div class="player2">
-      <h2>PLAYER 2</h2>
-
-      <div class="globalScore">72</div>
-
-      <div class="roundScore">
-        <p>CURRENT</p>
-        <div class="number">0</div>
-      </div>
-    </div>
+  <main>
+    <section class="player1 player1-active">
+      <h2><span></span>PLAYER 1</h2>
     
-    <div class="playground">
+      <div class="global" id="global--0"></div>
 
-      <button class="newGame"><img src="./icons/plus.svg" alt="plus icon">NEW GAME</button>
-
-      <div class="dice">
-        <div class="p1"></div>
-        <div class="p2"></div>
-        <div class="p3"></div>
-        <div class="p4"></div>
-        <div class="p5"></div>
-        <div class="p6"></div>
-        <div class="p7"></div>
-        <div class="p8"></div>
-        <div class="p9"></div>
+      <div class="current-container">
+        <p>CURRENT</p>
+        <p class="current" id="current--0"></p>
       </div>
+    </section>
 
-      <div class="diceCommands">
-        <button><img src="./icons/refresh.svg" alt="refresh icon">ROLL DICE</button>
-        <button><img width="50px" height="50px" src="./icons/download.png" alt="download icon">HOLD</button>
+    <section class="player2">
+      <h2><span></span>PLAYER 2</h2>
+    
+      <div class="global" id="global--1"></div>
+
+      <div class="current-container">
+        <p>CURRENT</p>
+        <p class="current" id="current--1"></p>
       </div>
+    </section>
+    
+
+    <div class="dice">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-  </div>
+
+    <button class="btn-new-game"><img src="./icons/plus.svg" alt="plus icon">NEW GAME</button>
+    <button class="btn-roll"><img src="./icons/refresh.svg" alt="refresh icon">ROLL DICE</button>
+    <button class="btn-hold"><img width="50px" height="50px" src="./icons/download.png" alt="download icon">HOLD</button>
+
+  </main>
+
+  <script type="module" src="./javacript/main.js"></script>
 </body>
 </html>

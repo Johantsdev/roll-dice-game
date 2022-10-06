@@ -1,0 +1,24 @@
+.dice {
+  display: none;
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap: 20px 40px;
+
+
+  position: absolute;
+  right: calc(50% - 85px);
+  top: 30%;
+
+  width: 170px;
+  height: 170px;
+  padding: 20px;
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow:  6px 6px 12px #01010172,
+              -6px -6px 12px #0000002c;
+  
+  & div {
+    @extend %orangeDot;
+  }
+}
+ 
