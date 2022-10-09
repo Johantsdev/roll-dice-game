@@ -34,7 +34,6 @@ button {
 }
 
 @include minBreakPoint(801px) {
-
   .btn-new-game {
     width: 250px;
     font-size: 2.5rem;

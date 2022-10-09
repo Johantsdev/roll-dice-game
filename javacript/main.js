@@ -56,7 +56,7 @@ btnHold.addEventListener("click", () => {
   document.getElementById(`global--${activePlayer}`).textContent  = scores[activePlayer];
 
   //2. if the player HAS reached the maximum
-  if (scores[activePlayer] >= 10) {
+  if (scores[activePlayer] >= 100) {
     activePlayer === 0 ? player1Zone.classList.add("winner-player") : player1Zone.classList.add("looser-player");
     activePlayer === 1 ? player2Zone.classList.add("winner-player") : player2Zone.classList.add("looser-player");
 
