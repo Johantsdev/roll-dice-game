@@ -1,113 +1,21 @@
-.dice div, .player1-active h2 span::before, .player2-active h2 span::before {
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  background-color: #ea412b;
-}
-
-*, ::before, ::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-button {
-  border: none;
-  background-color: inherit;
-  font-size: inherit;
-  font-family: inherit;
-}
-
 html {
   font-size: 62.5%;
 }
 
 body {
-  position: relative;
-  min-height: 100vh;
-  font-size: 3.1rem;
+  height: 100vh;
   font-family: Lato, sans-serif;
+  font-size: 2rem;
   font-weight: 300;
-  color: rgba(0, 0, 0, 0.6);
 }
 
 main {
-  position: absolute;
-  right: 0;
-  left: 0;
   height: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
       grid-template-areas: "player1 player2";
-  margin: auto;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 1300px) {
-  html {
-    font-size: 50%;
-  }
-}
-
-.dice {
-  display: none;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
-  gap: 20px 40px;
-  position: absolute;
-  right: calc(50% - 85px);
-  top: 30%;
-  width: 170px;
-  height: 170px;
-  padding: 20px;
-  background-color: #FFF;
-  border-radius: 10px;
-  -webkit-box-shadow: 6px 6px 12px #01010172, -6px -6px 12px #0000002c;
-          box-shadow: 6px 6px 12px #01010172, -6px -6px 12px #0000002c;
-}
-
-.btn-new-game, .btn-roll, .btn-hold {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: absolute;
-  right: calc(50% - 125px);
-  width: 250px;
-  font-size: 3rem;
-}
-
-.btn-new-game img, .btn-roll img, .btn-hold img {
-  margin-right: 20px;
-}
-
-.btn-new-game {
-  top: 5%;
-}
-
-.btn-roll {
-  top: 70%;
-}
-
-.btn-hold {
-  top: 80%;
 }
 
 .player1 {
@@ -122,7 +30,66 @@ button:hover {
   grid-area: player2;
 }
 
-.player1, .player2 {
+.btn-new-game, .dice, .commands {
+  position: absolute;
+}
+
+.btn-new-game {
+  left: calc(50% - 75px);
+  top: 3%;
+}
+
+.dice {
+  left: calc(50% - 75px);
+  top: 40%;
+}
+
+.commands {
+  left: calc(50% - 150px);
+  bottom: 3%;
+}
+
+@media only screen and (min-width: 801px) {
+  .btn-new-game {
+    top: 10%;
+    left: calc(50% - 125px);
+  }
+  .dice {
+    left: calc(50% - 75px);
+  }
+  .commands {
+    bottom: 10%;
+    left: calc(50% - 75px);
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .commands {
+    left: calc(50% - 150Px);
+  }
+}
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.dice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,26 +99,118 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  gap: 15px 30px;
+  width: 140px;
+  height: 140px;
+  padding: 20px;
+  background-color: #FFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 6px 6px 12px #01010172, -6px -6px 12px #0000002c;
+          box-shadow: 6px 6px 12px #01010172, -6px -6px 12px #0000002c;
 }
 
-.player1 h2, .player2 h2 {
-  font-size: 7rem;
-  font-weight: 300;
-  margin: 140px 0 20px;
-  position: relative;
+.dice div {
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  background-color: #FFF;
 }
 
-.player1 .global, .player2 .global {
-  font-size: 15rem;
-  font-weight: 100;
-  margin-bottom: 170px;
+button {
+  padding: 7px;
+  font-weight: 500;
+  border-radius: 5px;
+  width: 150px;
+  color: #ea412b;
 }
 
-.player1 .current-container, .player2 .current-container {
+button:hover {
+  cursor: pointer;
+}
+
+.btn-new-game {
+  margin: auto;
+  display: block;
+  border: 1.5px solid #ea412b;
+}
+
+.commands {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.btn-roll, .btn-hold {
+  border: 1.5px solid #000;
+}
+
+.btn-roll {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
+.btn-hold {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+@media only screen and (min-width: 801px) {
+  .btn-new-game {
+    width: 250px;
+    font-size: 2.5rem;
+  }
+  .commands {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100px;
+  }
+  .btn-roll, .btn-hold {
+    border: 1.5px solid #000;
+  }
+  .btn-roll {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  .btn-hold {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .btn-hold, .btn-roll {
+    width: 300px;
+  }
+}
+
+section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,64 +223,108 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 250px;
-  height: 150px;
-  margin-bottom: 100px;
+}
+
+.h2-global {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 3rem;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.global {
+  margin-bottom: 30px;
+  font-size: 7rem;
+  color: #ea412b;
+}
+
+.current-container {
+  width: 130px;
+  height: 100px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
   background-color: #ea412b;
-  font-size: 2rem;
 }
 
-.player1 .current-container .current, .player2 .current-container .current {
-  font-size: 5rem;
+.current-number {
+  font-size: 4rem;
   color: #FFF;
+  font-weight: 500;
 }
 
-@media only screen and (max-width: 1300px) {
-  .current-container {
-    width: 150px;
-    height: 100px;
+@media only screen and (min-width: 801px) {
+  section {
+    padding-top: 130px;
   }
-  .player1 h2, .player2 h2 {
+  h2 {
+    position: relative;
+    font-weight: 300;
     font-size: 5rem;
   }
+  .global {
+    margin-bottom: 120px;
+    font-size: 10rem;
+    font-weight: 100;
+    color: #ea412b;
+  }
+  .current-container {
+    width: 170px;
+    height: 110px;
+    padding: 15px;
+    text-align: center;
+    background-color: #ea412b;
+  }
+  .current-number {
+    margin-top: 10px;
+    font-size: 4rem;
+    color: #FFF;
+    font-weight: 300;
+  }
 }
 
-.player1-active {
-  background-color: rgba(98, 91, 66, 0.15);
+.active-player {
+  background-color: rgba(146, 145, 145, 0.222);
 }
 
-.player1-active h2 span::before {
+.active-player h2 span::before {
   content: "";
-  display: block;
   position: absolute;
-  right: -30px;
-  top: 3.5rem;
+  top: -20px;
+  right: 50%;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  background-color: #ea412b;
 }
 
-.player2-active {
-  background-color: rgba(98, 91, 66, 0.15);
-}
-
-.player2-active h2 span::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: -30px;
-  top: 3.5rem;
+@media only screen and (min-width: 801px) {
+  .active-player h2 span::before {
+    top: calc(50% - .65rem);
+    right: -30px;
+  }
 }
 
 .winner-player {
-  background-color: rgba(0, 255, 0, 0.541);
-  /* 
-  h2::before {
-    content : "WINNER!";
-    position: absolute;
-    transform: rotate(-15deg) ;
-    font-size: 4rem;
-  } */
+  background-color: rgba(64, 255, 0, 0.3);
 }
 
 .looser-player {
-  background-color: rgba(255, 0, 0, 0.576);
+  background-color: rgba(255, 8, 0, 0.3);
 }
 /*# sourceMappingURL=style.css.map */

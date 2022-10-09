@@ -1,0 +1,70 @@
+section {
+  @include flexDisplay(space-around, center, column);
+
+}
+
+.h2-global {
+  @include flexDisplay(space-around, center, column);
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 3rem;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.global {
+  margin-bottom: 30px;
+  font-size: 7rem;
+  color: $orange;
+}
+
+.current-container {
+  width: 130px;
+  height: 100px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: $orange;
+}
+
+.current-number {
+  font-size: 4rem;
+  color: #FFF;
+  font-weight: 500;
+}
+
+@include minBreakPoint(801px) {
+  section {
+    padding-top: 130px;
+  }
+  
+  h2 {
+    position: relative;
+    font-weight: 300;
+    font-size: 5rem;
+  }
+  
+  .global {
+    margin-bottom: 120px;
+    font-size: 10rem;
+    font-weight: 100;
+    color: $orange;
+  }
+  
+  .current-container {
+    width: 170px;
+    height: 110px;
+    padding: 15px;
+    text-align: center;
+    background-color: $orange;
+  }
+  
+  .current-number {
+    margin-top: 10px;
+    font-size: 4rem;
+    color: #FFF;
+    font-weight: 300;
+  }
+}

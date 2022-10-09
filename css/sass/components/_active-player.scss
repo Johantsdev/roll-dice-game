@@ -1,0 +1,17 @@
+.active-player {
+  background-color: rgba(146, 145, 145, 0.222);
+  & h2 span::before {
+    content : "";
+    position: absolute;
+    top: -20px;
+    right: 50%;
+    @include diceDot(1.3rem, $orange);
+  }
+}
+
+@include minBreakPoint(801px) {
+  .active-player h2 span::before {
+    top: calc(50% - .65rem);
+    right: -30px;
+  }  
+}

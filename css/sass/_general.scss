@@ -3,32 +3,66 @@ html {
 }
 
 body {
-  position: relative;
-  min-height: 100vh;
-  font-size: 3.1rem;
+  height: 100vh;
   font-family: Lato, sans-serif;
+  font-size: 2rem;
   font-weight: 300;
-  color: rgba(0, 0, 0, 0.6);
 }
 
 main {
-  position: absolute;
-  right: 0;
-  left: 0;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
-    "player1 player2";
-  margin: auto;
+  "player1 player2";
 }
 
-button:hover {
-  cursor: pointer;
+.player1 {
+  grid-area: player1;
 }
 
-@include maxBreakPoint(1300px) {
-  html {
-    font-size: 50%;
+.player2 {
+  grid-area: player2;
+}
+
+.btn-new-game, .dice, .commands {
+  position: absolute;
+}
+
+.btn-new-game {
+  left: calc(50% - 75px);
+  top: 3%;
+}
+
+.dice {
+  left: calc(50% - 75px);
+  top: 40%;
+}
+
+.commands {
+  left: calc(50% - 150px);
+  bottom: 3%;
+}
+
+@include minBreakPoint(801px) {
+  
+  .btn-new-game {
+    top: 10%;
+    left: calc(50% - 125px);
+  }
+
+  .dice {
+    left: calc(50% - 75px);
+  }
+
+  .commands {
+    bottom: 10%;
+    left: calc(50% - 75px);
+  }
+}
+
+@include minBreakPoint(1281px) {
+  .commands {
+    left: calc(50% - 150Px);
   }
 }

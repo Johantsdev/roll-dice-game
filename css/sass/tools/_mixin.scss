@@ -5,8 +5,15 @@
   flex-direction: $direction;
 }
 
-@mixin maxBreakPoint($width) {
-  @media only screen and (max-width: $width) {
+@mixin minBreakPoint($width) {
+  @media only screen and (min-width: $width) {
     @content;
   }
+}
+
+@mixin diceDot($size, $color) {
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  background-color: $color;
 }

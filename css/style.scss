@@ -1,0 +1,12 @@
+@import "./sass/tools/variables";
+@import "./sass/tools/mixin";
+
+@import "./sass/general";
+@import "./sass/reset";
+
+@import "./sass/components/dice";
+@import "./sass/components/buttons";
+@import "./sass/components/player";
+@import "./sass/components/active-player";
+@import "./sass/components/winner-player";
+

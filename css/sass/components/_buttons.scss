@@ -1,24 +1,65 @@
-.btn-new-game, .btn-roll,.btn-hold {
-  @include flexDisplay();
-  position: absolute;
-  right: calc(50% - 125px);
-  width: 250px;
-  font-size: 3rem;
-  img {
-    margin-right: 20px;
+button {
+  padding: 7px;
+  font-weight: 500;
+  border-radius: 5px;
+  width: 150px;
+  color: $orange;
+
+  &:hover {
+    cursor: pointer;
   }
+
 }
 
 .btn-new-game {
-  top: 5%;
+  margin: auto;
+  display: block;
+  border: 1.5px solid $orange;
+}
+
+.commands  {
+  @include flexDisplay(space-around, center);
+}
+
+.btn-roll, .btn-hold {
+  border: 1.5px solid #000;
 }
 
 .btn-roll {
-  top: 70%;
+  transform: translateX(-5px);
 }
 
 .btn-hold {
-  top: 80%;
+  transform: translateX(5px);
 }
 
+@include minBreakPoint(801px) {
 
+  .btn-new-game {
+    width: 250px;
+    font-size: 2.5rem;
+  }
+
+  .commands  {
+    @include flexDisplay(space-around, center, column);
+    height: 100px;
+  }
+  
+  .btn-roll, .btn-hold {
+    border: 1.5px solid #000;
+  }
+  
+  .btn-roll {
+    transform: translateY(-10px);
+  }
+  
+  .btn-hold {
+    transform: translateY(10px);
+  }
+}
+
+@include minBreakPoint(1281px) {
+  .btn-hold, .btn-roll {
+    width: 300px;
+  }
+}
